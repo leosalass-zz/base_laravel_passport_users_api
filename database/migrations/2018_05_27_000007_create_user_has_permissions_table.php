@@ -26,6 +26,7 @@ class CreateUserHasPermissionsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_user');
             $table->unsignedInteger('id_permission');
+            $table->enum('action', ['add', 'remove'])->default('add');;
 
             $table->softDeletes();
             $table->timestamps();
