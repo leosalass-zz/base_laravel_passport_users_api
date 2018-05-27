@@ -22,12 +22,12 @@ class CreateUserPermissionsTable extends Migration
     {
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
-            $table->engine = '';
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 45)->nullable();
             $table->string('short_description')->nullable();
             $table->softDeletes();
-            $table->nullableTimestamps();
+            $table->timestamps();
         });
     }
 

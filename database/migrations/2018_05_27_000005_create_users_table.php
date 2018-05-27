@@ -34,13 +34,14 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('last_login_ip', 45)->nullable();
             $table->dateTime('last_login')->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        Schema::table($this->set_schema_table, function (Blueprint $table){
 
             $table->index(["id_state"], 'fk_users_user_states1_idx');
-
             $table->unique(["email"], 'email_UNIQUE');
-            $table->softDeletes();
-            $table->nullableTimestamps();
-
 
             $table->foreign('id_state', 'fk_users_user_states1_idx')
                 ->references('id')->on('user_states')

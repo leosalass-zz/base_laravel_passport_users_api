@@ -27,7 +27,7 @@ class CreateUserRolesTable extends Migration
             $table->string('name', 45)->nullable();
             $table->string('short_description')->nullable();
             $table->softDeletes();
-            $table->nullableTimestamps();
+            $table->timestamps();
         });
     }
 

@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserHasRolesTable extends Migration
+class CreateUserHasPermissionsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $set_schema_table = 'user_has_roles';
+    public $set_schema_table = 'user_has_permissions';
 
     /**
      * Run the migrations.
-     * @table user_has_roles
+     * @table user_has_permissions
      *
      * @return void
      */
@@ -22,25 +22,27 @@ class CreateUserHasRolesTable extends Migration
     {
         if (Schema::hasTable($this->set_schema_table)) return;
         Schema::create($this->set_schema_table, function (Blueprint $table) {
-            $table->engine = '';
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('id_user');
-            $table->unsignedInteger('id_rol');
+            $table->unsignedInteger('id_permission');
 
-            $table->index(["id_rol"], 'fk_user_has_roles_user_roles1_idx');
-
-            $table->index(["id_user"], 'fk_user_has_roles_users1_idx');
             $table->softDeletes();
-            $table->nullableTimestamps();
+            $table->timestamps();
+        });
 
+        Schema::table($this->set_schema_table, function (Blueprint $table){
 
-            $table->foreign('id_user', 'fk_user_has_roles_users1_idx')
+            $table->index(["id_permission"], 'fk_user_has_permissions_user_permissions1_idx');
+            $table->index(["id_user"], 'fk_user_has_permissions_users1_idx');
+
+            $table->foreign('id_user', 'fk_user_has_permissions_users1_idx')
                 ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('id_rol', 'fk_user_has_roles_user_roles1_idx')
-                ->references('id')->on('user_roles')
+            $table->foreign('id_permission', 'fk_user_has_permissions_user_permissions1_idx')
+                ->references('id')->on('user_permissions')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
