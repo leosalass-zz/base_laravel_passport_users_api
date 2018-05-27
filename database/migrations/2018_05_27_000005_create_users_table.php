@@ -25,11 +25,11 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('id_state')->nullable();
-            $table->string('full_name');
-            $table->string('username', 45);
+            $table->string('name');
+            $table->string('display_name', 45);
             $table->string('image', 100)->nullable();
             $table->string('email', 45);
-            $table->string('password', 45);
+            $table->string('password', 255);
             $table->integer('max_roles')->nullable()->default('1');
             $table->rememberToken();
             $table->string('last_login_ip', 45)->nullable();
