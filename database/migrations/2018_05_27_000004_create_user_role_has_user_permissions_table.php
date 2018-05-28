@@ -35,6 +35,8 @@ class CreateUserRoleHasUserPermissionsTable extends Migration
 
             $table->index(["id_role"], 'fk_role_has_permissions_user_roles1_idx');
             $table->index(["id_permission"], 'fk_role_has_permissions_user_permissions1_idx');
+            $table->unique(["id_role", "id_permission"], 'user_role_has_user_permissions_unique');
+
             $table->foreign('id_role', 'fk_role_has_permissions_user_roles1_idx')
                 ->references('id')->on('user_roles')
                 ->onDelete('no action')

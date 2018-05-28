@@ -36,6 +36,7 @@ class CreateUserHasPermissionsTable extends Migration
 
             $table->index(["id_permission"], 'fk_user_has_permissions_user_permissions1_idx');
             $table->index(["id_user"], 'fk_user_has_permissions_users1_idx');
+            $table->unique(["id_user", "id_permission"], 'user_has_permissions_unique');
 
             $table->foreign('id_user', 'fk_user_has_permissions_users1_idx')
                 ->references('id')->on('users')

@@ -34,8 +34,7 @@ class CreateUserHasRolesTable extends Migration
 
           $table->index(["id_role"], 'fk_user_has_roles_user_roles1_idx');
           $table->index(["id_user"], 'fk_user_has_roles_users1_idx');
-          $table->unique(["updated_at"], 'updated_at_UNIQUE');
-          $table->unique(["created_at"], 'created_at_UNIQUE');
+          $table->unique(["id_user", "id_role"], 'user_has_roles_unique');
 
           $table->foreign('id_user', 'fk_user_has_roles_users1_idx')
                 ->references('id')->on('users')

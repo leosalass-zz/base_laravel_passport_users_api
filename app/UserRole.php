@@ -21,12 +21,12 @@ class UserRol extends Model
     protected $fillable = ['name', 'short_description'];
 
     public function permissions(){
-        return $this->belongsToMany('App\UserPermission', 'user_role_has_user_permissions', 'id_rol', 'id_permission')
+        return $this->belongsToMany('App\UserPermission', 'user_role_has_user_permissions', 'id_role', 'id_permission')
             ->withTimestamps();
     }
 
     public function users(){
-        return $this->belongsToMany('App\User', 'user_has_roles', 'id_rol', 'id_user')
+        return $this->belongsToMany('App\User', 'user_has_roles', 'id_role', 'id_user')
             ->withTimestamps();
     }
 }

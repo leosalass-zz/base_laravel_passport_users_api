@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "c021a22e15e5fb178e53d9a0701fec71",
@@ -3287,16 +3287,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.6.1",
+            "version": "v7.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "cf7fa642e9c0a9cd04f93d438fa8ae2ecf02c59b"
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/cf7fa642e9c0a9cd04f93d438fa8ae2ecf02c59b",
-                "reference": "cf7fa642e9c0a9cd04f93d438fa8ae2ecf02c59b",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/848a4f6abbb3ac64c84691867d30d5f6f765889c",
+                "reference": "848a4f6abbb3ac64c84691867d30d5f6f765889c",
                 "shasum": ""
             },
             "require": {
@@ -3333,7 +3333,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-05-26T02:01:38+00:00"
+            "time": "2018-05-26T14:25:04+00:00"
         },
         {
             "name": "mockery/mockery",
