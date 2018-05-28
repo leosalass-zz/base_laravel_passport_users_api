@@ -108,6 +108,9 @@ The different permissions and roles can be created and assigned through the avai
 # Contact and support
 For personalized support you can contact me through the email: leosalass@gmail.com
 
+***
+---
+***
 
 # Descipción
 
