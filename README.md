@@ -114,10 +114,10 @@ For personalized support you can contact me through the email: leosalass@gmail.c
 
 # Descipción
 
-Implemantación de un sistema de control de acceso mediante el uso de roles y permisos, haciendo uso de Laravel 5.5, Laravel passport, mpociot/laravel-apidoc-generator. Con este proyecto se pretende garantizar un correcto control de acceso a las aplicaciones, sin importar cuantos diferentes roles pueda requrir un mismo usuario, ya que el sistema es validado contra los permisos disponibles de los usuarios segun sus roles, y permisos directamente asignados o bloqueados.   
+Implemantación de un sistema de control de acceso mediante el uso de roles y permisos, haciendo uso de Laravel 5.6, Laravel passport, mpociot/laravel-apidoc-generator. Con este proyecto se pretende garantizar un correcto control de acceso a las aplicaciones, sin importar cuantos diferentes roles pueda requrir un mismo usuario, ya que el sistema es validado contra los permisos disponibles de los usuarios segun sus roles, y permisos directamente asignados o bloqueados.   
 
 ## Permisos
-Los persmisos permiten acceso a los usuarios a los diferentes modulos de la aplicacion, para el sistema implementado en este proyecto, cada modulo tendra unos permisos básicos descritos a continuación:  
+Los permisos permiten acceso a los usuarios a los diferentes modulos de la aplicacion, para el sistema implementado en este proyecto, cada modulo tendra unos permisos básicos descritos a continuación:  
 - modulo.create  
 - modulo.read  
 - modulo.read.mine  
