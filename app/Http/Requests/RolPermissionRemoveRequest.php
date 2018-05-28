@@ -17,7 +17,6 @@ class RolPermissionRemoveRequest extends GenericResposeRequest
             'id_role' => 'required|integer|min:1|exists:user_roles,id',
             'id_permission' => 'required|integer|min:1|exists:user_permissions,id',
             'id_permission' => 'exists:user_role_has_user_permissions,id_permission,id_role,'.Request::get('id_role'),
-            //'id_permission' => 'required|integer|min:1|exists:user_permissions,id',
         ];
     }
 }
