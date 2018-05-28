@@ -1,9 +1,28 @@
+# Desciption
+
+Implementing an access control system through the use of roles and permissions, using Laravel 5.6, Laravel passport, mpociot / laravel-apidoc-generator. This project aims to guarantee a correct access control to the applications, no matter how many different roles the same user may require, since the system is validated against the permissions available to the users according to their roles, and directly assigned or blocked permissions.
+
+## Permissions
+The permissions allow access to the users to the different modules of the application, for the system implemented in this project, each module will have some basic permissions described below:  
+- modulo.create  
+- modulo.read  
+- modulo.read.mine  
+- modulo.update  
+- modulo.update.mine  
+- modulo.delete  
+- modulo.delete.mine   
+
+### Available options  
+- create Permissions
+- remove permissions
+
+
 # Descipción (SPANISH)
 
 Implemantación de un sistema de control de acceso mediante el uso de roles y permisos, haciendo uso de Laravel 5.6, Laravel passport, mpociot/laravel-apidoc-generator. Con este proyecto se pretende garantizar un correcto control de acceso a las aplicaciones, sin importar cuantos diferentes roles pueda requrir un mismo usuario, ya que el sistema es validado contra los permisos disponibles de los usuarios segun sus roles, y permisos directamente asignados o bloqueados.   
 
 ## Permisos
-Los persmisos permiten acceso a los usuarios a los diferentes modulos de la aplicacion, para el sistema implementado en este proyecto, cada modulo tendra unos permisos básicos descritos a continuación:  
+Los permisos permiten acceso a los usuarios a los diferentes modulos de la aplicacion, para el sistema implementado en este proyecto, cada modulo tendra unos permisos básicos descritos a continuación:  
 - modulo.create  
 - modulo.read  
 - modulo.read.mine  
@@ -16,42 +35,43 @@ Los persmisos permiten acceso a los usuarios a los diferentes modulos de la apli
 - crear Permisos  
 - eliminar permisos  
 
+
 ## Roles
-mediante la cración de roles, se definen permisos especificos para un tipo de usuario.  
+Through the creation of roles, specific permissions are defined for a type of user.
 
-### opciones disponibles  
-- crear roles  
-- listar roles  
-- actualizar roles  
-- eliminar roles    
-- asignar y eliminar permisos en un rol
+### Available options
+- create roles
+- list roles
+- update roles
+- eliminate roles
+- assign and delete permissions in a role
 
-## Usuarios  
-todos las cuentas de acceso a la aplicacion.
+## Users
+all access accounts to the application.
 
-### opciones disponibles:  
-- crear usuarios    
-- listar usuarios  
-- actualizar usuarios  
-- eliminar usuarios        
-- listar roles de un usuario  
-- asignar roles de un usuario específico.  
-- retirar roles de un usuario específico.  
-- listar permisos de un usuario  
-- retirar permisos de un usuario específico.  
-- asignar permisos de un usuario específico.    
+### Available options:
+- create users
+- list users
+- update users
+- remove users
+- list roles of a user
+- assign roles of a specific user.
+- Remove roles from a specific user.
+- list permissions of a user
+- Remove permissions from a specific user.
+- assign permissions of a specific user.
 
 ## Seeders
-la aplicacion ya viene parametrizada con los datos minimos requeridos, revisar los seeders para mayor información.    
+the application is already parameterized with the minimum data required, check the seeders for more information.
 
-## Instrucciones  
-a continuación se describen las intrucciones básicas para poner en marcha el proyecto y conectarse desde postman.  
+## Instructions
+Below are the basic instructions to start the project and connect from postman.
 
-### env file  
-renombrar el archivo .env.example a .env
+### env file
+rename the .env.example file to .env
 
-### consola / terminal   
-en la consola ir a root del proyecto y ejecutar los siguientes comandos (si usa vagrant para los comandos que interactuen con la dase de datos, debe ingresar a la maquina por ssh, https://confluence.jetbrains.com/display/PhpStorm/Working+with+Advanced+Vagrant+features+in+PhpStorm):
+### console / terminal   
+in the console go to the root of the project and execute the following commands (if you use vagrant for the commands that interact with the data dase, you must enter the machine by ssh, https://confluence.jetbrains.com/display/PhpStorm/Working+with+Advanced+Vagrant+features+in+PhpStorm):
 - composer update  
 - php artisan key:generate  
 - opcional: vendor\bin\homestead make  
@@ -62,50 +82,48 @@ en la consola ir a root del proyecto y ejecutar los siguientes comandos (si usa 
 - composer dump-autoload
 - php artisan db:seed
 
-## documentacion de servicios y accesos a los mismos  
 
-### Generar la documentacion de la rutas API  
-- php artisan api:gen --routePrefix="settings/api/*"  
+## documentation of services and access to them
 
-### visualizar la ducumentacion de las rutas API
-- NOMBRE_DEL_SITIO/docs/index.html  
-
-documentacion: https://github.com/mpociot/laravel-apidoc-generator/
-
-## Obtener Token de Acceso  
-Para esta documentación se usará el usuario generadp por defecto en el seeder, pero cada usuario deberà obtener su propio token de acceso  
-
-- POST: http://share-your-plate.app/oauth/token  
-- Body:  
--- grant_type: password  
--- client_id: CLIENT_ID_FROM_DB   
--- client_secret: SECRET_KEY_FROM_DB  
--- username: admin@admin.com  
--- password: secret  
-
-Nota: CLIENT_ID_FROM_DB y SECRET_KEY_FROM_DB ambos estan en la Tabla oauth_clients, debe tomar el registro con el nombre "Laravel Password Grant Client". Para proyectos nuevos este ID es 2.    
-
-## Consumir los tokens de acceso  
-### Headers  
-- Accept: application/json  
-- Authorization: Bearer YOUR_ACCESS_TOKEN  
-
-Nota: YOUR_ACCESS_TOKEN se obtiene en la respuesta de el paso anterior.  
+### Generate API route documentation
+- php artisan api: gen --routePrefix = "settings / api / *"
 
 
-## Configuracion de nuevos modulos   
-Los diferentes permisos y roles pueden ser creados y asiganados mediante las rutas de apis disponibles, para validar el acceso a un modulo especifico, se debe agregar el middleware ApplicationAccessControl con sus respectivas restricciones a la ruta deseada. Ej:  
-- Route::get('id/{id_user}/roles', 'UsersController@roles')  
-->middleware(['ApplicationAccessControl:user_has_user_roles.read','auth:api']);   
+### visualize the ducumentacion of API routes
+- NAME_of_the_SITIO / docs / index.html
 
-## Agradecimientos especiales:
-- Laravel team: Por este excelente framework   
-- mpociot: por su sistema de documentacion de apis, https://github.com/mpociot/laravel-apidoc-generator/  
-- stackoverflow: por su incontable cantidad de informacion que me sirvio de ayuda muchos de las dudas que se me presentaron.  
+Documentation: https://github.com/mpociot/laravel-apidoc-generator/
+
+## Get Access Token
+For this documentation the default user will be used in the seeder, but each user must obtain their own access token
+
+- POST: http://share-your-plate.app/oauth/token
+- Body:
+- grant_type: password
+- client_id: CLIENT_ID_FROM_DB
+- client_secret: SECRET_KEY_FROM_DB
+- username: admin@admin.com
+- password: secret
+
+Note: CLIENT_ID_FROM_DB and SECRET_KEY_FROM_DB are both in the Table oauth_clients, you must register with the name "Laravel Password Grant Client". For new projects this ID is 2.
+
+## Consume access tokens
+### Headers
+- Accept: application / json
+- Authorization: Bearer YOUR_ACCESS_TOKEN
+
+Note: YOUR_ACCESS_TOKEN is obtained in the response from the previous step.
 
 
-# Descipción (ENGLISH ... comming soon)
+## Configuration of new modules
+The different permissions and roles can be created and assigned through the available routes of apis, to validate the access to a specific module, the ApplicationAccessControl middleware with its respective restrictions must be added to the desired route. Ex:
+- Route :: get ('id / {id_user} / roles', 'UsersController @ roles')
+-> middleware (['ApplicationAccessControl: user_has_user_roles.read', 'auth: api']);
 
+## Special thanks:
+- Laravel team: For this excellent framework
+- mpociot: for its apis documentation system, https://github.com/mpociot/laravel-apidoc-generator/
+- Stackoverflow: for its countless amount of information that helped me many of the questions that were presented to me.
 
-# Contacto y soporte  
-Para soporte personalizado me pueden contactar a través del correo: leosalass@gmail.com
+# Contact and support
+For personalized support you can contact me through the email: leosalass@gmail.com
