@@ -1,6 +1,6 @@
-# Descipción
+# Descipción (SPANISH)
 
-Implemantación de un sistema de control de acceso mediante el uso de roles y permisos, haciendo uso de Laravel 5.5, Laravel passport, mpociot/laravel-apidoc-generator. Con este proyecto se pretende garantizar un correcto control de acceso a las aplicaciones, sin importar cuantos diferentes roles pueda requrir un mismo usuario, ya que el sistema es validado contra los permisos disponibles de los usuarios segun sus roles, y permisos directamente asignados o bloqueados.   
+Implemantación de un sistema de control de acceso mediante el uso de roles y permisos, haciendo uso de Laravel 5.6, Laravel passport, mpociot/laravel-apidoc-generator. Con este proyecto se pretende garantizar un correcto control de acceso a las aplicaciones, sin importar cuantos diferentes roles pueda requrir un mismo usuario, ya que el sistema es validado contra los permisos disponibles de los usuarios segun sus roles, y permisos directamente asignados o bloqueados.   
 
 ## Permisos
 Los persmisos permiten acceso a los usuarios a los diferentes modulos de la aplicacion, para el sistema implementado en este proyecto, cada modulo tendra unos permisos básicos descritos a continuación:  
@@ -102,6 +102,10 @@ Los diferentes permisos y roles pueden ser creados y asiganados mediante las rut
 - Laravel team: Por este excelente framework   
 - mpociot: por su sistema de documentacion de apis, https://github.com/mpociot/laravel-apidoc-generator/  
 - stackoverflow: por su incontable cantidad de informacion que me sirvio de ayuda muchos de las dudas que se me presentaron.  
+
+
+# Descipción (ENGLISH ... comming soon)
+
 
 # Contacto y soporte  
 Para soporte personalizado me pueden contactar a través del correo: leosalass@gmail.com
