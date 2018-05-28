@@ -1,4 +1,4 @@
-# Desciption
+# Description
 
 Implementing an access control system through the use of roles and permissions, using Laravel 5.6, Laravel passport, mpociot / laravel-apidoc-generator. This project aims to guarantee a correct access control to the applications, no matter how many different roles the same user may require, since the system is validated against the permissions available to the users according to their roles, and directly assigned or blocked permissions.
 
